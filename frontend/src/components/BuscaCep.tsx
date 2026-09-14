@@ -21,7 +21,7 @@ function BuscaCep() {
         setErro(null);
         setEndereco(null);
 
-        fetch(`http://localhost:8000/cep/${cep}`)
+        fetch(`${import.meta.env.VITE_API_URL}/cep/${cep}`)
             .then((resposta) => {
                 if(!resposta.ok) {
                     throw new Error("CEP inválido ou não encontrado");

@@ -21,7 +21,7 @@ function BuscaCnpj() {
         setErro(null);
         setEmpresa(null);
 
-        fetch(`http://localhost:8000/cnpj/${cnpj}`)
+        fetch(`${import.meta.env.VITE_API_URL}/cnpj/${cnpj}`)
             .then((resposta) => {
                 if(!resposta.ok) {
                     throw new Error("CNPJ inválido ou não encontrado");
