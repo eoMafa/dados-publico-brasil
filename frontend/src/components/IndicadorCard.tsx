@@ -20,7 +20,7 @@ function IndicadorCard({ endpoint, titulo, cor }: IndicadorCardProps) {
         setCarregando(true);
         setErro(null);
 
-        fetch(`http://localhost:8000/${endpoint}?ultimos_n=5`)
+        fetch(`${import.meta.env.VITE_API_URL}/${endpoint}?ultimos_n=5`)
             .then((resposta) => {
                 if(!resposta.ok){
                     throw new Error("Não foi possível carregar os dados");

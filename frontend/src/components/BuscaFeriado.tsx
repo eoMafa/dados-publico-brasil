@@ -18,7 +18,7 @@ function BuscaFeriado() {
         setErro(null);
         setFeriado([]);
 
-        fetch(`http://localhost:8000/feriados/${ano}`)
+        fetch(`${import.meta.env.VITE_API_URL}/feriados/${ano}`)
             .then((resposta) => {
                 if(!resposta.ok) {
                     throw new Error("Ano inválido ou não encontrado");
